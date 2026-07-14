@@ -17,6 +17,7 @@
 ├── 規則書/       官方規則書+戰役書＋擴充＋FAQ PDF（不隨儲存庫散布，請自備）
 ├── 玩家輔助/     角色表、Player Aid 等 PDF（同上）
 ├── 中文翻譯/     規則書繁中譯文 .zh-TW.md（同上）
+├── variants/     自製變體規則（隨庫提供；索引時標記「非官方」與官方規則分流）
 ├── 卡表/         primal_database.xlsm（社群卡表，請自備）
 │                 cards_hunters.json（rag/export_cards.py 自 xlsm 匯出，595 張卡
 │                 　　含 6 位獵人完整效果文字；無 xlsm 時索引自動改用此檔）

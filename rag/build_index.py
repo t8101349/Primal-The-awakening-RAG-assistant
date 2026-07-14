@@ -337,6 +337,18 @@ def main() -> None:
         chunks.extend(monster_blocks)
         print(f"[魔物總表] {monsters_path.name} -> {len(monster_blocks)} 塊")
 
+    variants_dir = BOOKS_DIR / "variants"
+    if variants_dir.exists():
+        n_var = 0
+        for p in sorted(variants_dir.glob("*.md")):
+            blocks = chunk_zh_markdown(p)
+            for b in blocks:  # 標明非官方，避免與官方規則混淆
+                b["book"] = f"{normalize_book(p.stem)}（自製變體，非官方）"
+            chunks.extend(blocks)
+            n_var += len(blocks)
+        if n_var:
+            print(f"[變體規則] variants/ -> {n_var} 塊")
+
     for i, c in enumerate(chunks):
         c["id"] = i
     with CHUNKS_PATH.open("w", encoding="utf-8") as fh:

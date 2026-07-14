@@ -35,7 +35,12 @@ GLOSSARY: dict[str, str] = {
     "覺醒者": "awakened", "弩砲": "ballista", "毒": "venom poison",
     "夢魘": "nightmare", "麻痺孢子": "paralyzing spore", "戰舞": "war dance",
     "穿刺": "pierce", "節奏": "rhythm", "共鳴": "resonance",
+    "刷新": "refresh", "整備": "upkeep", "掙扎": "struggle",
+    "倒地": "ko knocked out", "釋放大招": "unleash",
 }
+
+# 問題含這些詞時才視為在問自製變體，否則變體條目降權（防止蓋過官方規則）
+_VARIANT_MARKERS = ("變體", "自製", "狂龍", "狂暴化", "極限化", "斷末魔", "house rule")
 
 
 def tokenize(text: str) -> list[str]:
@@ -133,11 +138,14 @@ class BM25Retriever:
                     continue
                 denom = tf + self.k1 * (1 - self.b + self.b * self.doc_len[i] / self.avg_len)
                 scores[i] += idf * tf * (self.k1 + 1) / denom
+        asking_variant = any(m in query for m in _VARIANT_MARKERS)
         for i in range(self.n):
             if not scores[i]:
                 continue
             if not include_toc and _is_toc(self.chunks[i]):
                 scores[i] *= 0.2  # 目錄頁降權（參照 multimodal-rag-review 的 TOC 過濾）
+            if not asking_variant and "自製變體" in self.chunks[i]["book"]:
+                scores[i] *= 0.35  # 非變體問題時，自製規則降權以免蓋過官方規則
             hits = len(proper & self.book_tokens[i])
             if hits:
                 scores[i] *= 1.0 + 0.35 * min(hits, 3)  # 書名命中加權
