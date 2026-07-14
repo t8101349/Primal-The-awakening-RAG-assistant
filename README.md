@@ -18,6 +18,8 @@
 ├── 玩家輔助/     角色表、Player Aid 等 PDF（同上）
 ├── 中文翻譯/     規則書繁中譯文 .zh-TW.md（同上）
 ├── 卡表/         primal_database.xlsm（社群卡表，請自備）
+│                 cards_hunters.json（rag/export_cards.py 自 xlsm 匯出，595 張卡
+│                 　　含 6 位獵人完整效果文字；無 xlsm 時索引自動改用此檔）
 │                 cards_extra.json、monsters.json（本專案彙整，隨庫提供）
 └── rag/          程式本體（詳見 rag/README.md）
     └── data/     索引與頁面圖（執行 build_index.py 自動生成）

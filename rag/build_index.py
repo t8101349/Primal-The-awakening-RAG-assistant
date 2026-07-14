@@ -102,61 +102,43 @@ def chunk_pdf_english(path) -> list[dict]:
     return blocks
 
 
-def chunk_cards_xlsm(path) -> list[dict]:
-    """解析 primal_database.xlsm 的 Cards 表。
+CARD_DISPLAY = [  # (cards_hunters.json 欄位, 顯示標籤)
+    ("card_type", "類型"), ("subtype", "子類型"), ("stamina_cost", "體力費用"),
+    ("card_id", "卡號"), ("trait", "特性"), ("text", "效果"),
+    ("level", "等級"), ("health", "生命"), ("element", "元素"),
+    ("cost", "費用"), ("damage", "傷害"), ("deck_composition", "牌組構成"),
+    ("faq", "FAQ"),
+]
 
-    每張卡一個 chunk（卡名放進 section 以享受標題命中加權），
-    另外為每個獵人彙整一個「卡牌清單」chunk，供卡組搭配類問題檢索。
-    其餘工作表（Hunters/Campaign sheet）是玩家存檔追蹤表，不收錄。
-    """
-    import openpyxl
 
-    LABELS = [  # (欄位標題關鍵字, 顯示標籤)
-        ("Card type", "類型"), ("Subtype", "子類型"), ("Stamina cost", "體力費用"),
-        ("Card ID", "卡號"), ("Card trait", "特性"), ("Card text", "效果"),
-        ("Level", "等級"), ("Health", "生命"), ("Element", "元素"),
-        ("Cost", "費用"), ("Damage", "傷害"), ("Deck composition", "牌組構成"),
-        ("FAQ", "FAQ"),
-    ]
+def _card_records_to_blocks(cards: list[dict]) -> list[dict]:
+    """卡片紀錄 -> 檢索塊：每卡一塊（卡名進 section 吃標題加權）＋
+    每獵人×卡號系列一個牌組清單塊。xlsm 與 JSON 兩種來源共用。"""
     book = "primal_database（卡表）"
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
-    ws = wb["Cards"]
-    idx: dict[str, int] = {}
     blocks: list[dict] = []
     decks: dict[str, dict[str, list[str]]] = {}  # hunter -> 卡號 -> [卡名]
 
-    for row_no, r in enumerate(ws.iter_rows(values_only=True), start=1):
-        vals = ["" if v is None else str(v).strip() for v in r]
-        if not idx:
-            if any(v.startswith("Card name") for v in vals):
-                idx = {v.split("\n")[0]: i for i, v in enumerate(vals) if v}
-            continue
-        name = vals[idx["Card name"]] if idx.get("Card name", 99) < len(vals) else ""
+    for i, c in enumerate(cards, start=1):
+        name = c.get("name", "")
         if not name:
             continue
-
-        def get(col: str) -> str:
-            i = idx.get(col, 99)
-            return vals[i] if i < len(vals) else ""
-
-        category, hunter = get("Card"), get("Hunter")
+        category, hunter = c.get("category", ""), c.get("hunter", "")
         head = f"【卡牌】{name}"
         owner = f"{category}／{hunter}" if hunter else category
         lines = [f"{head}（{owner}）" if owner else head]
-        for col, label in LABELS:
-            v = get(col)
+        for key, label in CARD_DISPLAY:
+            v = c.get(key)
             if v:
                 lines.append(f"{label}：{v}")
         blocks.append({
-            "book": book, "page": row_no,
+            "book": book, "page": i,
             "section": f"{name}（{hunter or category}）",
             "lang": "en", "text": "\n".join(lines),
         })
         if hunter:
-            tier = get("Card ID") or get("Level") or "?"
+            tier = str(c.get("card_id") or c.get("level") or "?")
             decks.setdefault(hunter, {}).setdefault(tier, []).append(name)
 
-    wb.close()
     # 每個獵人×每個卡號系列一塊（避免一人一大塊被 BM25 長度懲罰壓低）：
     # S = 起始牌組；字母開頭卡號（A1、B2…）依字母歸入專精系列；其餘依原值
     for hunter, tiers in decks.items():
@@ -178,6 +160,18 @@ def chunk_cards_xlsm(path) -> list[dict]:
                         + "、".join(names),
             })
     return blocks
+
+
+def chunk_cards_xlsm(path) -> list[dict]:
+    """解析 primal_database.xlsm 的 Cards 表（Hunters/Campaign sheet 為玩家存檔，不收錄）。"""
+    from export_cards import parse_xlsm
+    return _card_records_to_blocks(parse_xlsm(path))
+
+
+def chunk_cards_json(path) -> list[dict]:
+    """解析 cards_hunters.json（export_cards.py 自 xlsm 匯出；無 xlsm 時的替代來源）。"""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return _card_records_to_blocks(data.get("cards", []))
 
 
 def chunk_cards_extra(path) -> list[dict]:
@@ -321,10 +315,15 @@ def main() -> None:
     print(f"[en] {len(pdfs)} 本 PDF -> {n_en} 塊")
 
     cards_path = CARDS_DIR / "primal_database.xlsm"
+    cards_json = CARDS_DIR / "cards_hunters.json"
     if cards_path.exists():
         card_blocks = chunk_cards_xlsm(cards_path)
         chunks.extend(card_blocks)
         print(f"[卡表] {cards_path.name} -> {len(card_blocks)} 塊")
+    elif cards_json.exists():
+        card_blocks = chunk_cards_json(cards_json)
+        chunks.extend(card_blocks)
+        print(f"[卡表] {cards_json.name}（JSON 匯出）-> {len(card_blocks)} 塊")
 
     extra_path = CARDS_DIR / "cards_extra.json"
     if extra_path.exists():
