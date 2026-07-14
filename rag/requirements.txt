@@ -1,0 +1,8 @@
+# 核心（檢索、索引、問答）
+PyMuPDF>=1.24.0        # PDF 文字抽取與頁面渲染
+requests>=2.31.0
+python-dotenv>=1.0.0
+openpyxl>=3.1.0        # 讀取 primal_database.xlsm 卡表
+
+# MoA（moa.py 需要；只用 ask.py 可不裝）
+langchain-openai>=0.2.0

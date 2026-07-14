@@ -1,0 +1,14 @@
+# 受著作權保護的內容——請使用者自備，不隨儲存庫散布
+規則書/
+玩家輔助/
+中文翻譯/
+卡表/primal_database.xlsm
+
+# 生成物與私密設定
+rag/data/
+rag/.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/

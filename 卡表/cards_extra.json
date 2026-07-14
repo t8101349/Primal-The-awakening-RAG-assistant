@@ -1,0 +1,689 @@
+{
+ "_note": "Heart of the Wild 擴充獵人卡補充（來源：規則書牌組列表）。text 欄可自行填入卡片效果全文，重跑 build_index.py 即生效。",
+ "hunter_mechanics": {
+  "Drusk": "輔助型獵人：節奏（Rhythm）、共鳴／共振（Resonance）、控場、防禦、治療、高抽牌",
+  "Zaraya": "攻擊型獵人：穿刺（Pierce）、守護（Guard）、取回（Reclaim）、機動走位"
+ },
+ "cards": [
+  {
+   "hunter": "Drusk",
+   "name": "Resounding Strike",
+   "name_zh": "迴響打擊",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Sundering Impact",
+   "name_zh": "裂碎衝擊",
+   "decks": [
+    "S",
+    "1"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Call of the Primordials",
+   "name_zh": "原初者的呼喚",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Rhythmic Smash",
+   "name_zh": "節奏重擊",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Hunting Pulse",
+   "name_zh": "狩獵脈動",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Awakened Fury",
+   "name_zh": "覺醒怒火",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Echoing Strength",
+   "name_zh": "迴盪之力",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Rhythmic Action",
+   "name_zh": "節奏行動",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Ghost Note",
+   "name_zh": "幽靈音符",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Driving Rhythm",
+   "name_zh": "強勁節奏",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Accented Blow",
+   "name_zh": "重音打擊",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Resonant Call",
+   "name_zh": "共鳴呼喚",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "War Chant",
+   "name_zh": "戰爭吟唱",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Reverberum",
+   "name_zh": "迴響殘音",
+   "decks": [
+    "S",
+    "1",
+    "2"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Defensive Pulse",
+   "name_zh": "防禦脈動",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Sound Shield",
+   "name_zh": "音波之盾",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Echo of Resilience",
+   "name_zh": "堅韌迴聲",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Exhausting Beat",
+   "name_zh": "耗竭節拍",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Rhythmic Insight",
+   "name_zh": "節奏洞察",
+   "decks": [
+    "S",
+    "1",
+    "2"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Thundering Drum",
+   "name_zh": "雷鳴戰鼓",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Backbeat",
+   "name_zh": "反拍節奏",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Crescendo",
+   "name_zh": "漸強",
+   "decks": [
+    "S",
+    "1"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Drums of Vengeance",
+   "name_zh": "復仇戰鼓",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Invocation",
+   "name_zh": "祈喚",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Hymn of Refuge",
+   "name_zh": "庇護頌歌",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Rousing Rhythm",
+   "name_zh": "激昂節奏",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Voice of the Primordials",
+   "name_zh": "原初者之聲",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Warbeat",
+   "name_zh": "戰鬥節拍",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Pulsebreaker",
+   "name_zh": "破脈者",
+   "decks": [
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Rhythmic Strike",
+   "name_zh": "節奏打擊",
+   "decks": [
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Indomitable March",
+   "name_zh": "不屈進行曲",
+   "decks": [
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Drusk",
+   "name": "Destructive Resonance",
+   "name_zh": "毀滅共振",
+   "decks": [
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Blinding Strike",
+   "name_zh": "炫目打擊",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Backlash",
+   "name_zh": "反噬",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Flanking Dance",
+   "name_zh": "側翼之舞",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Sentinel's Lunge",
+   "name_zh": "哨衛突刺",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Waiting Strike",
+   "name_zh": "伺機打擊",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Guardian's Reach",
+   "name_zh": "守護者之距",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Guided Charge",
+   "name_zh": "導引衝鋒",
+   "decks": [
+    "S",
+    "1"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Flanking Strike",
+   "name_zh": "側翼打擊",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Elusive Maneuver",
+   "name_zh": "飄忽機動",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Long Reach",
+   "name_zh": "長距觸及",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Side Sweep",
+   "name_zh": "側面橫掃",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Dashing Leap",
+   "name_zh": "疾衝躍擊",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Defying Danger",
+   "name_zh": "無懼險境",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Striking Weakness",
+   "name_zh": "直擊弱點",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Agile Step",
+   "name_zh": "敏捷步伐",
+   "decks": [
+    "S"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Regroup",
+   "name_zh": "重整旗鼓",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Focused Defense",
+   "name_zh": "專注防禦",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Vigilant Guard",
+   "name_zh": "警戒守禦",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Graceful Stride",
+   "name_zh": "優雅闊步",
+   "decks": [
+    "S",
+    "1",
+    "2"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Ward",
+   "name_zh": "護禦",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Escape",
+   "name_zh": "脫身",
+   "decks": [
+    "S",
+    "1"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Dodger's Edge",
+   "name_zh": "閃避者的優勢",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Precise Step",
+   "name_zh": "精準步伐",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Sudden Dash",
+   "name_zh": "驟然疾衝",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Guardian",
+   "name_zh": "守護者）（精通",
+   "decks": [
+    "S",
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Quick Strike",
+   "name_zh": "快速打擊",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Whirling Spear",
+   "name_zh": "迴旋長矛",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Guardian's Reclaim",
+   "name_zh": "守護者的取回",
+   "decks": [
+    "1",
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Tactical Dance",
+   "name_zh": "戰術之舞",
+   "decks": [
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Piercing Momentum",
+   "name_zh": "穿刺動能",
+   "decks": [
+    "2",
+    "3"
+   ],
+   "text": ""
+  },
+  {
+   "hunter": "Zaraya",
+   "name": "Mastered Steps",
+   "name_zh": "純熟步法",
+   "decks": [
+    "3"
+   ],
+   "text": ""
+  }
+ ]
+}
