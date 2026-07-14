@@ -1,39 +1,22 @@
-# --- Python ---
+# Python
 __pycache__/
 *.py[cod]
-*.egg-info/
-.eggs/
-build/
-dist/
 .venv/
 venv/
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
 
-# --- 環境變數與金鑰(絕不 commit)---
+# 環境變數與金鑰（絕不 commit）
 .env
 .env.*
 !.env.example
 
-# --- 本機工具設定 ---
-.claude/
+# 生成物（build_index.py 產生）
+data/
+
+# 本機工具設定
 .vscode/
 .idea/
 
-# --- 模型權重與大型產物 ---
-models/
-*.npy
-*.pt
-*.safetensors
-
-# --- 使用者自己的財報 PDF(範例 PDF 由 make_sample_pdf.py 產生)---
-data/pdfs/
-
-# --- 執行期產物(demo 用的展示資料仍保留在版本庫)---
-data/processed/clip_index/
-data/processed/byaldi_index/
-
-# --- OS ---
+# OS
 .DS_Store
 Thumbs.db
